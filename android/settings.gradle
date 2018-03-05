@@ -1,0 +1,3 @@
+rootProject.name = 'ReasonEvents'
+
+include ':app'

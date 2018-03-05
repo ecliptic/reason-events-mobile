@@ -1,0 +1,21 @@
+{
+  "presets": ["react-native"],
+  "plugins": [
+    "transform-class-properties",
+    "jsx-display-if",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "components": "./src/components",
+          "clients": "./src/clients",
+          "state": "./src/state",
+          "data": "./src/data"
+        }
+      }
+    ]
+  ]
+}

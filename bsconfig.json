@@ -1,0 +1,31 @@
+{
+  "name": "@ecliptic/reason-events-mobile",
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ],
+  "bs-dependencies": [
+    "@ecliptic/mnstr-core",
+    "@ecliptic/mnstr-client",
+    "@glennsl/bs-json",
+    "reason-react",
+    "bs-abstract",
+    "bs-axios",
+    "bs-moment",
+    "reason-apollo",
+    "bs-react-native"
+  ],
+  "reason": {
+    "react-jsx": 2
+  },
+  "ppx-flags": ["graphql_ppx/ppx"],
+  "bsc-flags": ["-bs-super-errors"],
+  "refmt": 3
+}
