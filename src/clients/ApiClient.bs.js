@@ -7,7 +7,7 @@ var MnstrClientBrowser = require("@ecliptic/mnstr-client/src/MnstrClientBrowser.
 
 var match = Config.Env[/* isDev */0];
 
-var client = MnstrClient.make(Config.Api[/* endpoint */0], /* Some */[MnstrClientBrowser.Session[/* get */1]], match !== 0 ? true : false, /* () */0);
+var client = MnstrClient.make(/* None */0, /* Some */[MnstrClientBrowser.Session[/* get */1]], Config.Api[/* endpoint */0], /* Some */[match !== 0 ? true : false], /* () */0);
 
 var query = MnstrClient.query;
 
