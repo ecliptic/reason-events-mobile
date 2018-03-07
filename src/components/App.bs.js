@@ -4,42 +4,38 @@
 var Home = require("./Home.bs.js");
 var Footer = require("./Footer.bs.js");
 var Header = require("./Header.bs.js");
+var RnPaper = require("../adapters/RnPaper.bs.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 var View$BsReactNative = require("bs-react-native/src/components/view.js");
-var Style$BsReactNative = require("bs-react-native/src/style.js");
-var StyleSheet$BsReactNative = require("bs-react-native/src/styleSheet.js");
-
-var styles = StyleSheet$BsReactNative.create({
-      container: Style$BsReactNative.style(/* :: */[
-            Style$BsReactNative.flex(1.0),
-            /* :: */[
-              Style$BsReactNative.justifyContent(/* Center */2),
-              /* :: */[
-                Style$BsReactNative.alignItems(/* Center */2),
-                /* :: */[
-                  Style$BsReactNative.backgroundColor("#F5FCFF"),
-                  /* [] */0
-                ]
-              ]
-            ]
-          ])
-    });
+var StatusBar$BsReactNative = require("bs-react-native/src/components/statusBar.js");
 
 var component = ReasonReact.statelessComponent("App");
 
 function make() {
   var newrecord = component.slice();
   newrecord[/* render */9] = (function () {
-      return ReasonReact.element(/* None */0, /* None */0, View$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* Some */[styles.container], /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[
-                      ReasonReact.element(/* None */0, /* None */0, Header.make(/* array */[])),
-                      ReasonReact.element(/* None */0, /* None */0, Home.make(/* array */[])),
-                      ReasonReact.element(/* None */0, /* None */0, Footer.make(/* array */[]))
+      return ReasonReact.element(/* None */0, /* None */0, RnPaper.Provider[/* make */0](/* array */[
+                      ReasonReact.element(/* None */0, /* None */0, StatusBar$BsReactNative.make(/* None */0, /* Some */[/* lightContent */-106329341], /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[])),
+                      ReasonReact.element(/* None */0, /* None */0, View$BsReactNative.make(/* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0, /* None */0)(/* array */[
+                                ReasonReact.element(/* None */0, /* None */0, Header.make(/* array */[])),
+                                ReasonReact.element(/* None */0, /* None */0, Home.make(/* array */[])),
+                                ReasonReact.element(/* None */0, /* None */0, Footer.make(/* array */[]))
+                              ]))
                     ]));
     });
   return newrecord;
 }
 
-exports.styles = styles;
+function fromJs(props) {
+  return make(props.children);
+}
+
+var $$default = ReasonReact.wrapReasonForJs(component, fromJs);
+
 exports.component = component;
 exports.make = make;
-/* styles Not a pure module */
+exports.fromJs = fromJs;
+exports.$$default = $$default;
+exports.default = $$default;
+exports.__esModule = true;
+/* component Not a pure module */

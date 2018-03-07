@@ -2,24 +2,19 @@ open ReasonReact;
 
 open BsReactNative;
 
-let styles =
-  StyleSheet.create(
-    Style.(
-      {
-        "container":
-          style([
-            flex(1.0),
-            justifyContent(Center),
-            alignItems(Center),
-            backgroundColor("#F5FCFF")
-          ])
-      }
-    )
-  );
+open RnPaper;
 
 let component = statelessComponent("App");
 
 let make = (_children) => {
   ...component,
-  render: (_self) => <View style=styles##container> <Header /> <Home /> <Footer /> </View>
+  render: (_self) =>
+    <Provider>
+      <StatusBar barStyle=`lightContent />
+      <View> <Header /> <Home /> <Footer /> </View>
+    </Provider>
 };
+
+let fromJs = (props) => make(props##children);
+
+let default = wrapReasonForJs(~component, fromJs);
